@@ -42,8 +42,8 @@ class QuoteItemRepository extends Repository
         $product = $this->productRepository->findOrFail($data['product_id']);
 
         $quoteItem = parent::create(array_merge($data, [
-            'sku'  => $product->sku,
-            'name' => $product->name,
+            'sku'   => $product->sku,
+            'name'  => $product->name,
             'price' => ($product->offer_price > 0 && $product->offer_price < $product->price)
                 ? $product->offer_price
                 : $product->price,
@@ -62,8 +62,8 @@ class QuoteItemRepository extends Repository
         $product = $this->productRepository->findOrFail($data['product_id']);
 
         $quoteItem = parent::update(array_merge($data, [
-            'sku'  => $product->sku,
-            'name' => $product->name,
+            'sku'   => $product->sku,
+            'name'  => $product->name,
             'price' => ($product->offer_price > 0 && $product->offer_price < $product->price)
                 ? $product->offer_price
                 : $product->price,
